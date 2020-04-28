@@ -1,18 +1,20 @@
 # Game Ping-Pong - jogo criado pela DSA. Atividade: comentar todas as linhas com o seu nome ou significado;
 
-from tkinter import *
-import random
-import time
+from tkinter import * # Chamada de biblioteca;
+import random # Chamada de biblioteca;
+import time # Chamada de biblioteca;
 
+# Declaração de variável e comando input e conversão de objeto string para objeto int
 level = int(input("Qual nível você gostaria de jogar? 1/2/3/4/5 \n"))
 length = 500/level
 
-
+# Declaração de variável e chamada de função.
 root = Tk()
 root.title("Ping Pong")
 root.resizable(0,0)
 root.wm_attributes("-topmost", -1)
 
+# Declaração de variável
 canvas = Canvas(root, width=800, height=600, bd=0,highlightthickness=0)
 canvas.pack()
 
@@ -29,7 +31,7 @@ class Bola:
         self.id = canvas.create_oval(0, 0, 15, 15, fill=color)
         self.canvas.move(self.id, 245, 200)
 
-        starts_x = [-3, -2, -1, 1, 2, 3]
+        starts_x = [-3, -2, -1, 1, 2, 3] # Lista
         random.shuffle(starts_x)
 
         self.x = starts_x[0]
@@ -44,22 +46,22 @@ class Bola:
 
         pos = self.canvas.coords(self.id)
 
-        if pos[1] <= 0:
+        if pos[1] <= 0: # Condicional if
             self.y = 3
 
-        if pos[3] >= self.canvas_height:
+        if pos[3] >= self.canvas_height: # Condicional if
             self.y = -3
 
-        if pos[0] <= 0:
+        if pos[0] <= 0: # Condicional if
             self.x = 3
             
-        if pos[2] >= self.canvas_width:
+        if pos[2] >= self.canvas_width: # Condicional if
             self.x = -3
 
         self.Barra_pos = self.canvas.coords(self.Barra.id)
 
 
-        if pos[2] >= self.Barra_pos[0] and pos[0] <= self.Barra_pos[2]:
+        if pos[2] >= self.Barra_pos[0] and pos[0] <= self.Barra_pos[2]: # Condicional if
             if pos[3] >= self.Barra_pos[1] and pos[3] <= self.Barra_pos[3]:
                 self.y = -3
                 global count
@@ -67,7 +69,7 @@ class Bola:
                 score()
 
 
-        if pos[3] <= self.canvas_height:
+        if pos[3] <= self.canvas_height: # Condicional if
             self.canvas.after(10, self.draw)
         else:
             game_over()
@@ -93,23 +95,23 @@ class Barra:
 
         self.pos = self.canvas.coords(self.id)
 
-        if self.pos[0] <= 0:
+        if self.pos[0] <= 0: # Condicional if
             self.x = 0
         
-        if self.pos[2] >= self.canvas_width:
+        if self.pos[2] >= self.canvas_width: # Condicional if
             self.x = 0
         
         global lost
         
-        if lost == False:
+        if lost == False: # Condicional if
             self.canvas.after(10, self.draw)
 
     def move_left(self, event):
-        if self.pos[0] >= 0:
+        if self.pos[0] >= 0: # Condicional if
             self.x = -3
 
     def move_right(self, event):
-        if self.pos[2] <= self.canvas_width:
+        if self.pos[2] <= self.canvas_width: # Condicional if
             self.x = 3
 
 
