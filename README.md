@@ -8,13 +8,13 @@
 
  Data analysis course with Jupyter Notebook.
  
- Data analysis is the transformation (data) of numbers into information, into meaning, into problem solving.
+ Data analysis is the transformation of numbers (data) into information, into meaning, into problem solving.
 
 # Análise de Dados :chart_with_upwards_trend:
 
  Curso de análise de dados com Jupyter Notebook.
  
- A análise de dados é a transformação (dados) de números em informação, em significado, em solução de problemas.
+ A análise de dados é a transformação de números (dados) em informação, em significado, em solução de problemas.
   
 <p align="center">
   <img src="https://github.com/jonfisik/AnaliseDados/blob/master/imagens/analisededadosmedio.png" widht=""400>
